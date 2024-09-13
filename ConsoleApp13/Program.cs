@@ -24,22 +24,9 @@ namespace ConsoleApp13
                     sw.WriteLine(names[i]);
                 }
             }
-
-        public static void PrintNmaesList(string[] names, string path)
-        {
-            using (StreamReader sw = new StreamReader(path))
-            {
-                string str;
-                while ((str = sw.ReadLine()) != null)
-                {
-                    Console.WriteLine(str);
-                }
-            }
         }
 
-        public static void ExistsOrNot(string path)
-        {
-            if (File.Exists(path))
+            public static void PrintNmaesList(string[] names, string path)
             {
                 using (StreamReader sw = new StreamReader(path))
                 {
@@ -50,115 +37,128 @@ namespace ConsoleApp13
                     }
                 }
             }
-            else
-            {
-                Console.WriteLine("File does not exist.");
-            }
-        }
 
-        public static void CreateDir(string path,string path2)
-        {
-            if (!Directory.Exists(path))
+            public static void ExistsOrNot(string path)
             {
-                Directory.CreateDirectory(path);
-            }
-
-            if(!File.Exists(path2))
-            {
-                File.Create(path2);
-            }
-
-            using (StreamWriter sw = new StreamWriter(path2))
-            {
-                sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
-            }
-        }
-
-        public static void PrintAllLines(string path, string path2)
-        {
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            if (!File.Exists(path2))
-            {
-                File.Create(path2);
-            }
-
-            using (StreamWriter sw = new StreamWriter(path2))
-            {
-                sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
-            }
-
-            using(StreamReader sw = new StreamReader(path2))
-            {
-                string[] str = File.ReadAllLines(path2);
-
-                for(int i = 0; i < str.Length;i++ )
+                if (File.Exists(path))
                 {
-                    Console.WriteLine(str[i]);
+                    using (StreamReader sw = new StreamReader(path))
+                    {
+                        string str;
+                        while ((str = sw.ReadLine()) != null)
+                        {
+                            Console.WriteLine(str);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("File does not exist.");
                 }
             }
-        }
 
-        public static void WriteProgram(string path)
-        {
-            string[] paths = Directory.GetFiles(path);
+            public static void CreateDir(string path, string path2)
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
 
-            for (int i = 0; i < paths.Length; i++)
-            {
-                Console.WriteLine(paths[i]);
-            }
-        }
+                if (!File.Exists(path2))
+                {
+                    File.Create(path2);
+                }
 
-        public static void PrintNums()
-        {
-
-            try
-            {
-                int n = int.Parse(Console.ReadLine());
-                Console.WriteLine(n);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Mutqagrvac tivy sxal e");
-            }
-            finally
-            {
-                Console.WriteLine("Program End");
-            }
-        }
-
-        public static void Copy(string path, string path2,string path3)
-        {
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
+                using (StreamWriter sw = new StreamWriter(path2))
+                {
+                    sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
+                }
             }
 
-            if (!File.Exists(path2))
-            {
-                File.Create(path2);
-            }
-
-            using (StreamWriter sw = new StreamWriter(path2))
-            {
-                sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
-            }
-           
-            if (!File.Exists(path3))
-            {
-                Console.WriteLine("NO exist");
-            }
-            else
-            {
-                File.Delete(path3);
-            }
-        }
 
 
+            public static void PrintAllLines(string path, string path2)
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
 
+                if (!File.Exists(path2))
+                {
+                    File.Create(path2);
+                }
+
+                using (StreamWriter sw = new StreamWriter(path2))
+                {
+                    sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
+                }
+
+                using (StreamReader sw = new StreamReader(path2))
+                {
+                    string[] str = File.ReadAllLines(path2);
+
+                    for (int i = 0; i < str.Length; i++)
+                    {
+                        Console.WriteLine(str[i]);
+                    }
+                }
+            }
+
+            public static void WriteProgram(string path)
+            {
+                string[] paths = Directory.GetFiles(path);
+
+                for (int i = 0; i < paths.Length; i++)
+                {
+                    Console.WriteLine(paths[i]);
+                }
+            }
+
+            public static void PrintNums()
+            {
+
+                try
+                {
+                    int n = int.Parse(Console.ReadLine());
+                    Console.WriteLine(n);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Mutqagrvac tivy sxal e");
+                }
+                finally
+                {
+                    Console.WriteLine("Program End");
+                }
+            }
+
+            public static void Copy(string path, string path2, string path3)
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                if (!File.Exists(path2))
+                {
+                    File.Create(path2);
+                }
+
+                using (StreamWriter sw = new StreamWriter(path2))
+                {
+                    sw.WriteLine("The Kingdom of Armenia reached its height under Tigranes the Great in the 1st century BC and in the year 301 became the first state in the world to adopt Christianity as its official religion.[20][21][22][c] Armenia still recognises the Armenian Apostolic Church, the world's oldest national church, as the country's primary religious establishment.[23][d] The ancient Armenian kingdom was split between the Byzantine and Sasanian Empires around the early 5th century. Under the Bagratuni dynasty, the Bagratid Kingdom of Armenia was restored in the 9th century before falling in 1045. Cilician Armenia, an Armenian principality and later a kingdom, was located on the coast of the Mediterranean Sea between the 11th and 14th centuries.");
+                }
+
+                if (!File.Exists(path3))
+                {
+                    Console.WriteLine("NO exist");
+                }
+                else
+                {
+                    File.Delete(path3);
+                }
+            }
         static void Main(string[] args)
         {
             PrintNums();
@@ -168,11 +168,11 @@ namespace ConsoleApp13
             Copy(path, path2, path3);
             PrintAllLines(path, path2);
             CreateDir(path, path2);
-            string path = @"C:\Users\user\Desktop\New folder (4)\New folder";
-            WriteProgram(path);
+            string path1 = @"C:\Users\user\Desktop\New folder (4)\New folder";
+            WriteProgram(path1);
             string[] names = { "Bob", "Aram", "Ani", "Anna" };
-            string path = @"C:\Users\user\Desktop\New folder\names.txt";
-            ExistsOrNot(path);
+            string path5 = @"C:\Users\user\Desktop\New folder\names.txt";
+            ExistsOrNot(path5);
             PrintNmaesList(names, path);
             CallNamesList(path, names);
             Console.ReadLine();
